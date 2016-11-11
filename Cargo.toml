@@ -1,0 +1,11 @@
+[package]
+name = "rust_auto_watermark"
+version = "0.1.0"
+authors = ["Onion Huang"]
+
+[[bin]]
+name = "rust_auto_watermark"
+
+[dependencies]
+image = "*"
+num = "*"
