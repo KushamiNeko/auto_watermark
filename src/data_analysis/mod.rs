@@ -43,27 +43,16 @@ pub fn data_generation(program_data_root: &str, template_root: &str, tolerance: 
 		},
 	};
 
-	// let arc_tolerance = std::sync::Arc::new(tolerance);
-	// let arc_output_data = std::sync::Arc::new(program_data_root);
-
 	let ptr_tolerance: *const f64 = &tolerance;
 	let ptr_output_data: *const str = &*program_data_root;
 
 	let (t_done, s_done) = std::sync::mpsc::channel();
 
 	for i in files {
-		// let tolerance = arc_tolerance.clone();
-		// let program_data_root = arc_output_data.clone();
 		let done = t_done.clone();
-
-		// let arc_path = std::sync::Arc::new(i.unwrap());
-		// let arc_num_file = std::sync::Arc::new(num_file);
 
 		let ptr_path: *const std::fs::DirEntry = &i.unwrap();
 		let ptr_num_file: *const i64 = &num_file;
-
-		// let arc_i = arc_path.clone();
-		// let arc_num = arc_num_file.clone();
 
 		let _ = std::thread::spawn(move || {
 			unsafe {

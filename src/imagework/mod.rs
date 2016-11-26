@@ -11,15 +11,10 @@ use num::complex::Complex;
 
 use image::GenericImage;
 use image::Pixel;
-// use image::ColorType;
-
-// mod data_analysis;
 
 const WATER_MARK_ROOT: &'static str = r"water_mark_source_image";
 const WATER_MARK_OPACITY: f64 = 0.3;
 const PROGRAM_DATA: &'static str = r#"program_data"#;
-// const TOLERANCE: f64 = 0.075;
-
 
 struct WaterMarkType<'a> {
 	first: &'a str, 
